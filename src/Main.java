@@ -11,6 +11,8 @@ void main() {
 	UtilisateurService utilisateurs = new UtilisateurService();
 
 
+
 	//Placez vos appels de méthodes ici
+	IO.println(utilisateurs.creerUtilisateur("Oceane","Edde"));
 	IO.println(utilisateurs.rechercherParId("jdupont"));
 }
