@@ -28,4 +28,14 @@ public class Utilisateur {
 	public String getCourriel() {
 		return courriel;
 	}
+
+	@Override
+	public String toString() {
+		return "Utilisateur{" +
+				"identifiant='" + identifiant + '\'' +
+				", nom='" + nom + '\'' +
+				", prenom='" + prenom + '\'' +
+				", courriel='" + courriel + '\'' +
+				'}';
+	}
 }
