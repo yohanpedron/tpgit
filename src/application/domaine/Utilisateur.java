@@ -12,4 +12,30 @@ public class Utilisateur {
 		this.prenom = prenom;
 		this.courriel = courriel;
 	}
+
+	public String getIdentifiant() {
+		return identifiant;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public String getCourriel() {
+		return courriel;
+	}
+
+	@Override
+	public String toString() {
+		return "Utilisateur{" +
+				"identifiant='" + identifiant + '\'' +
+				", nom='" + nom + '\'' +
+				", prenom='" + prenom + '\'' +
+				", courriel='" + courriel + '\'' +
+				'}';
+	}
 }
