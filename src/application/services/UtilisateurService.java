@@ -13,16 +13,24 @@ public class UtilisateurService {
 		utilisateurRepository = new UtilisateurRepository();
 	}
 
-    public String creerUtilisateur(String prenom, String nom) {
+	//Creer un utilisateur
+    public void creerUtilisateur(String prenom, String nom) {
         String identifiant = (prenom.charAt(0) + nom).toLowerCase();
         String courriel = (prenom + "." + nom + "@mail.com").toLowerCase();
 
         Utilisateur nouvelUtilisateur = new Utilisateur(identifiant, nom , prenom, courriel);
-        return nouvelUtilisateur.getIdentifiant();
+		utilisateurRepository.getUtilisateurs().add(nouvelUtilisateur);
     }
 
+	//Recher les utilisateurs par ID
 	public Utilisateur rechercherParId(String identifiant){
 		return utilisateurRepository.getUtilisateurs().stream().filter(element -> identifiant.equals(element.getIdentifiant())).findAny().orElseThrow(() -> new RuntimeException("Cet utilisateur n'existe pas."));
 	}
+
+	//Rechercher tous les utilisateurs
+	public void rechercherTous(){
+		utilisateurRepository.getUtilisateurs().forEach(IO::println);
+	}
+
 
 }
